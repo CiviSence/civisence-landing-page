@@ -53,7 +53,7 @@ const DashboardPreview = () => {
             <div className="w-3 h-3 rounded-full bg-yellow-500" />
             <div className="w-3 h-3 rounded-full bg-green-500" />
             <div className="mx-auto bg-gray-900 rounded-md px-4 py-1 text-xs text-gray-500 font-mono">
-              app.civisence.com
+              www.civisence.in
             </div>
           </div>
           
