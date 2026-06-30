@@ -30,8 +30,8 @@ const Hero = () => {
             </h1>
             
             <p className="text-lg lg:text-xl text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0">
-              Implement civisence in your <br className="hidden lg:block"/>
-              <span className="font-semibold text-gray-800">area | society | organisation | institute</span><br className="hidden lg:block"/>
+              Implement civisence in your <br />
+              <span className="font-semibold text-gray-800">area | society | organisation | institute</span><br/>
               and keep your surrounding clean and well maintained.
             </p>
             
