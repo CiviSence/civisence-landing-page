@@ -36,10 +36,10 @@ const Hero = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start mb-8">
-              <button className="w-full sm:w-auto px-8 py-4 bg-primary hover:bg-primary-dark text-white rounded-xl font-medium transition-all shadow-lg shadow-primary/30 flex items-center justify-center gap-2 text-lg">
+              <a href="https://civisence.web.app/register" className="w-full sm:w-auto px-8 py-4 bg-primary hover:bg-primary-dark text-white rounded-xl font-medium transition-all shadow-lg shadow-primary/30 flex items-center justify-center gap-2 text-lg">
                 <Users size={20} />
                 Sign Up
-              </button>
+              </a>
               <button className="w-full sm:w-auto px-8 py-4 bg-white hover:bg-gray-50 text-gray-800 border border-gray-200 rounded-xl font-medium transition-all flex items-center justify-center gap-2 text-lg">
                 <Building2 size={20} />
                 Register Organization
@@ -70,7 +70,7 @@ const Hero = () => {
               </motion.div>
               
               {/* Faint background logo graphic */}
-              <div className="absolute text-gray-100 w-[120%] h-[120%] -z-10 flex items-center justify-center opacity-50">
+              <div className="absolute text-gray-100 w-[140%] h-[140%] -z-10 flex items-center justify-center opacity-10">
                  <Logo className="w-full h-full" />
               </div>
             </div>

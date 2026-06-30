@@ -24,9 +24,9 @@ const CTA = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4 relative z-10">
-            <button className="w-full sm:w-auto px-8 py-4 bg-white text-primary hover:bg-gray-50 rounded-xl font-bold transition-all shadow-lg text-lg">
+            <a href="https://civisence.web.app/register" className="w-full sm:w-auto px-8 py-4 bg-white text-primary hover:bg-gray-50 rounded-xl font-bold transition-all shadow-lg text-lg inline-block text-center">
               Get Started
-            </button>
+            </a>
             <button className="w-full sm:w-auto px-8 py-4 bg-white/10 hover:bg-white/20 border border-white/30 backdrop-blur-sm rounded-xl font-bold transition-all text-lg">
               Register Organization
             </button>

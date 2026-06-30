@@ -14,6 +14,7 @@ import Testimonials from './components/Testimonials';
 import Organizations from './components/Organizations';
 import FAQ from './components/FAQ';
 import Contact from './components/Contact';
+import DownloadApp from './components/DownloadApp';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
 
@@ -22,6 +23,7 @@ function App() {
     <div className="min-h-screen">
       <Navbar />
       <Hero />
+      <DownloadApp />
       <About />
       <HowItWorks />
       <Features />
@@ -35,6 +37,7 @@ function App() {
       <Organizations />
       <FAQ />
       <Contact />
+      
       <CTA />
       <Footer />
     </div>

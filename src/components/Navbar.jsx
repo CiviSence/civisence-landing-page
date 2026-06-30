@@ -48,12 +48,12 @@ const Navbar = () => {
           </div>
 
           <div className="hidden md:flex items-center space-x-4">
-            <button className="bg-primary hover:bg-primary-dark text-white px-6 py-2.5 rounded-full font-medium transition-colors flex items-center gap-2 shadow-lg shadow-primary/30">
+            <a href="https://civisence.web.app/register" className="bg-primary hover:bg-primary-dark text-white px-6 py-2.5 rounded-full font-medium transition-colors flex items-center gap-2 shadow-lg shadow-primary/30">
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
               </svg>
               Sign Up
-            </button>
+            </a>
           </div>
 
           {/* Mobile menu button */}
@@ -89,9 +89,9 @@ const Navbar = () => {
                 </a>
               ))}
               <div className="pt-4">
-                <button className="w-full bg-primary text-white px-6 py-3 rounded-xl font-medium flex justify-center items-center gap-2">
+                <a href="https://civisence.web.app/register" className="w-full bg-primary text-white px-6 py-3 rounded-xl font-medium flex justify-center items-center gap-2">
                   Sign Up
-                </button>
+                </a>
               </div>
             </div>
           </motion.div>
