@@ -1,11 +1,15 @@
 {
   "rewrites": [
     {
+      "source": "/sitemap.xml",
+      "destination": "/sitemap.xml"
+    },
+    {
       "source": "/(privacy|terms|security|accessibility|cookies|acceptable-use|ai-transparency|childrens-privacy|community-guidelines|contact-support|content-moderation|copyright-ip|data-deletion)",
       "destination": "/index.html"
     },
     {
-      "source": "/(.*)",
+      "source": "/((?!.*\\.).*)",
       "destination": "/index.html"
     }
   ]
