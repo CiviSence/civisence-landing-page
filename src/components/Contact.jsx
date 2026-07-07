@@ -42,6 +42,12 @@ const Contact = () => {
                     <br />
                     civisence@zohomail.com
                   </p>
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    <a href="/privacy" className="text-sm font-medium text-primary hover:text-primary-dark transition-colors">Privacy Policy</a>
+                    <a href="/terms" className="text-sm font-medium text-primary hover:text-primary-dark transition-colors">Terms</a>
+                    <a href="/security" className="text-sm font-medium text-primary hover:text-primary-dark transition-colors">Security</a>
+                    <a href="/accessibility" className="text-sm font-medium text-primary hover:text-primary-dark transition-colors">Accessibility</a>
+                  </div>
                 </div>
               </div>
             </div>

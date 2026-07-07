@@ -140,9 +140,7 @@ const Footer = () => {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="https://civisence-community.vercel.app/privacy"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/privacy"
                   className="text-gray-400 hover:text-white transition-colors focus:outline-hidden focus:underline"
                 >
                   Privacy Policy
@@ -150,9 +148,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="https://civisence-community.vercel.app/terms"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/terms"
                   className="text-gray-400 hover:text-white transition-colors focus:outline-hidden focus:underline"
                 >
                   Terms of Service
@@ -160,12 +156,26 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="https://civisence-community.vercel.app/security"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/security"
                   className="text-gray-400 hover:text-white transition-colors focus:outline-hidden focus:underline"
                 >
                   Security &amp; Encryption
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/accessibility"
+                  className="text-gray-400 hover:text-white transition-colors focus:outline-hidden focus:underline"
+                >
+                  Accessibility Statement
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/cookies"
+                  className="text-gray-400 hover:text-white transition-colors focus:outline-hidden focus:underline"
+                >
+                  Cookie Policy
                 </a>
               </li>
             </ul>
