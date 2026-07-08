@@ -1,9 +1,51 @@
-import React from "react";
+import React, { useState } from "react";
 import { MapPin, Mail, MessageSquare } from "lucide-react";
-import { useForm, ValidationError } from '@formspree/react';
 
 const Contact = () => {
-  const [state, handleSubmit] = useForm("mrewaowg");
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+  
+  const [submitting, setSubmitting] = useState(false);
+  const [succeeded, setSucceeded] = useState(false);
+  const [error, setError] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setSubmitting(true);
+    setError(false);
+    setSucceeded(false);
+    
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name: `${firstName} ${lastName}`.trim(),
+          email,
+          message
+        })
+      });
+      
+      if (!response.ok) {
+        throw new Error('Failed to send contact inquiry');
+      }
+      
+      setSucceeded(true);
+      setFirstName('');
+      setLastName('');
+      setEmail('');
+      setMessage('');
+    } catch (err) {
+      console.error(err);
+      setError(true);
+    } finally {
+      setSubmitting(false);
+    }
+  };
 
   return (
     <section id="contact" aria-labelledby="contact-heading" className="py-24 bg-white">
@@ -60,7 +102,7 @@ const Contact = () => {
               Send us a message
             </h3>
 
-            {state.succeeded ? (
+            {succeeded ? (
               <div className="relative z-10 bg-green-50 text-green-700 p-6 rounded-2xl border border-green-200 flex flex-col items-center text-center" role="alert" aria-live="polite">
                 <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mb-4" aria-hidden="true">
                   <svg className="w-6 h-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -68,10 +110,15 @@ const Contact = () => {
                   </svg>
                 </div>
                 <h4 className="font-bold text-lg mb-2 m-0">Message Sent Successfully!</h4>
-                <p className="m-0">Thank you for reaching out. Our team will get back to you shortly.</p>
+                <p className="m-0">Thank you for reaching out. Our team will get back to you shortly and register your inquiry in the database.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4 relative z-10" aria-label="Contact form">
+                {error && (
+                  <div className="bg-red-50 text-red-700 p-4 rounded-xl border border-red-200 text-xs font-semibold">
+                    ⚠ Failed to submit contact form. Please check your network and try again.
+                  </div>
+                )}
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="contact-firstName" className="block text-sm font-medium text-gray-700 mb-1">
@@ -82,10 +129,11 @@ const Contact = () => {
                       type="text"
                       name="firstName"
                       required
+                      value={firstName}
+                      onChange={(e) => setFirstName(e.target.value)}
                       className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-hidden transition-all"
                       placeholder="John"
                     />
-                    <ValidationError prefix="First Name" field="firstName" errors={state.errors} className="text-red-500 text-sm mt-1 block" />
                   </div>
                   <div>
                     <label htmlFor="contact-lastName" className="block text-sm font-medium text-gray-700 mb-1">
@@ -96,10 +144,11 @@ const Contact = () => {
                       type="text"
                       name="lastName"
                       required
+                      value={lastName}
+                      onChange={(e) => setLastName(e.target.value)}
                       className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-hidden transition-all"
                       placeholder="Doe"
                     />
-                    <ValidationError prefix="Last Name" field="lastName" errors={state.errors} className="text-red-500 text-sm mt-1 block" />
                   </div>
                 </div>
                 <div>
@@ -111,10 +160,11 @@ const Contact = () => {
                     type="email"
                     name="email"
                     required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-hidden transition-all"
                     placeholder="john@example.com"
                   />
-                  <ValidationError prefix="Email" field="email" errors={state.errors} className="text-red-500 text-sm mt-1 block" />
                 </div>
                 <div>
                   <label htmlFor="contact-message" className="block text-sm font-medium text-gray-700 mb-1">
@@ -125,17 +175,18 @@ const Contact = () => {
                     rows="4"
                     name="message"
                     required
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-hidden transition-all resize-none"
                     placeholder="How can we help you implement AI issue tracking?"
                   ></textarea>
-                  <ValidationError prefix="Message" field="message" errors={state.errors} className="text-red-500 text-sm mt-1 block" />
                 </div>
                 <button 
                   type="submit" 
-                  disabled={state.submitting}
-                  className="w-full bg-primary hover:bg-primary-dark text-white font-medium py-4 rounded-xl transition-colors shadow-lg shadow-primary/20 disabled:opacity-70 disabled:cursor-not-allowed flex justify-center items-center gap-2 focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+                  disabled={submitting}
+                  className="w-full bg-primary hover:bg-primary-dark text-white font-medium py-4 rounded-xl transition-colors shadow-lg shadow-primary/20 disabled:opacity-70 disabled:cursor-not-allowed flex justify-center items-center gap-2 focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-primary cursor-pointer select-none"
                 >
-                  {state.submitting ? 'Sending...' : 'Send Message'}
+                  {submitting ? 'Sending...' : 'Send Message'}
                 </button>
               </form>
             )}
