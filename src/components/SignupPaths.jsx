@@ -78,8 +78,8 @@ const SignupPaths = () => {
   return (
     <section id="signup" aria-labelledby="signup-heading" className="py-24 bg-gray-50 relative overflow-hidden">
       {/* Decorative blurs */}
-      <div className="absolute top-0 left-1/4 w-[350px] h-[350px] bg-blue-400/[0.06] rounded-full blur-[100px] pointer-events-none" aria-hidden="true" />
-      <div className="absolute bottom-0 right-1/4 w-[350px] h-[350px] bg-primary/[0.06] rounded-full blur-[100px] pointer-events-none" aria-hidden="true" />
+      <div className="absolute top-0 left-1/4 w-87.5 h-87.5 bg-blue-400/6 rounded-full blur-[100px] pointer-events-none" aria-hidden="true" />
+      <div className="absolute bottom-0 right-1/4 w-87.5 h-87.5 bg-primary/6 rounded-full blur-[100px] pointer-events-none" aria-hidden="true" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section header */}
@@ -120,7 +120,7 @@ const SignupPaths = () => {
               >
                 {/* Gradient header */}
                 <div
-                  className={`bg-gradient-to-r ${path.gradient} px-8 py-8 relative`}
+                  className={`bg-linear-to-r ${path.gradient} px-8 py-8 relative`}
                 >
                   {/* Subtle pattern overlay */}
                   <div className="absolute inset-0 opacity-10" aria-hidden="true">

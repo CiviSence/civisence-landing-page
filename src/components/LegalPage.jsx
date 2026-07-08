@@ -488,7 +488,7 @@ const LegalPage = ({ currentPath = '/privacy' }) => {
       />
       {/* Scroll Progress Bar */}
       <div 
-        className="fixed top-0 left-0 right-0 h-[2px] bg-zinc-900 origin-left z-50 no-print transition-all duration-75"
+        className="fixed top-0 left-0 right-0 h-0.5 bg-zinc-900 origin-left z-50 no-print transition-all duration-75"
         style={{ width: `${scrollProgress}%` }}
       />
 
@@ -514,7 +514,7 @@ const LegalPage = ({ currentPath = '/privacy' }) => {
         <div className="grid lg:grid-cols-[240px_1fr] xl:grid-cols-[240px_1fr_200px] gap-12">
           
           {/* Left Column: Flat Sidebar Directory (Desktop only) */}
-          <aside className="hidden lg:block w-[240px] sticky top-24 self-start space-y-8 no-print">
+          <aside className="hidden lg:block w-60 sticky top-24 self-start space-y-8 no-print">
             
             {/* Search Bar */}
             <div className="relative">
@@ -567,7 +567,7 @@ const LegalPage = ({ currentPath = '/privacy' }) => {
                           >
                             <div className="font-bold text-xs leading-normal flex items-center justify-between">
                               <span className="truncate pr-1">{doc.title}</span>
-                              <ChevronRight className="w-3 h-3 flex-shrink-0" />
+                              <ChevronRight className="w-3 h-3 shrink-0" />
                             </div>
                             {doc.snippet && (
                               <p className="mt-1 text-[10px] leading-relaxed line-clamp-2 text-zinc-400 font-normal">
@@ -755,7 +755,7 @@ const LegalPage = ({ currentPath = '/privacy' }) => {
                   {/* Preformatted Box */}
                   <div className="space-y-1 text-xs">
                     <label className="block text-zinc-500 font-semibold">Preview Email Text</label>
-                    <pre className="p-3 bg-white border border-zinc-200 rounded-lg text-[10px] text-zinc-600 whitespace-pre-wrap font-mono leading-relaxed max-h-[160px] overflow-y-auto shadow-inner select-all">
+                    <pre className="p-3 bg-white border border-zinc-200 rounded-lg text-[10px] text-zinc-600 whitespace-pre-wrap font-mono leading-relaxed max-h-40 overflow-y-auto shadow-inner select-all">
                       {emailBody}
                     </pre>
                   </div>
@@ -777,7 +777,7 @@ const LegalPage = ({ currentPath = '/privacy' }) => {
                     <button
                       onClick={handleComplianceSubmit}
                       disabled={complianceSubmitting || !requesterName.trim() || !requesterEmail.trim()}
-                      className="inline-flex items-center justify-center min-w-[130px] gap-1 px-4 py-2 rounded-lg bg-zinc-950 text-white text-xs font-bold hover:bg-zinc-800 transition-colors shadow-sm select-none cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="inline-flex items-center justify-center min-w-32.5 gap-1 px-4 py-2 rounded-lg bg-zinc-950 text-white text-xs font-bold hover:bg-zinc-800 transition-colors shadow-sm select-none cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       {complianceSubmitting ? 'Recording request...' : 'Send Email Request'}
                     </button>
@@ -859,7 +859,7 @@ const LegalPage = ({ currentPath = '/privacy' }) => {
           </article>
 
           {/* Right Column: Outline Table of Contents & support info (Desktop only) */}
-          <aside className="hidden xl:block w-[200px] sticky top-24 self-start max-h-[calc(100vh-120px)] overflow-y-auto pr-2 no-print space-y-8">
+          <aside className="hidden xl:block w-50 sticky top-24 self-start max-h-[calc(100vh-120px)] overflow-y-auto pr-2 no-print space-y-8">
             {toc.length > 0 && (
               <div className="space-y-3.5">
                 <p className="text-[10px] font-bold uppercase tracking-wider text-zinc-400">On this page</p>
@@ -874,7 +874,7 @@ const LegalPage = ({ currentPath = '/privacy' }) => {
                             e.preventDefault();
                             document.getElementById(heading.id)?.scrollIntoView({ behavior: 'smooth' });
                           }}
-                          className={`block pl-4 text-xs font-semibold leading-relaxed transition-all duration-200 border-l border-transparent -ml-[1px] ${
+                          className={`block pl-4 text-xs font-semibold leading-relaxed transition-all duration-200 border-l border-transparent -ml-px ${
                             isActive
                               ? 'text-zinc-950 font-bold border-zinc-950'
                               : 'text-zinc-400 hover:text-zinc-900 hover:border-zinc-350'
@@ -924,7 +924,7 @@ const LegalPage = ({ currentPath = '/privacy' }) => {
               animate={{ x: 0 }}
               exit={{ x: '-100%' }}
               transition={{ type: 'tween', duration: 0.25, ease: 'easeOut' }}
-              className="fixed top-0 bottom-0 left-0 w-full max-w-[280px] bg-white z-50 p-6 shadow-xl overflow-y-auto flex flex-col lg:hidden border-r border-zinc-200"
+              className="fixed top-0 bottom-0 left-0 w-full max-w-70 bg-white z-50 p-6 shadow-xl overflow-y-auto flex flex-col lg:hidden border-r border-zinc-200"
             >
               <div className="flex items-center justify-between mb-6">
                 <span className="font-bold text-xs text-zinc-900 uppercase tracking-wider">Compliance Index</span>
@@ -956,7 +956,7 @@ const LegalPage = ({ currentPath = '/privacy' }) => {
               </div>
               
               {searchQuery ? (
-                <div className="flex-grow space-y-4">
+                <div className="grow space-y-4">
                   <p className="text-[10px] font-bold uppercase tracking-wider text-zinc-400">Search Results ({searchResults.length})</p>
                   {searchResults.length > 0 ? (
                     <ul className="space-y-2">
@@ -999,7 +999,7 @@ const LegalPage = ({ currentPath = '/privacy' }) => {
                   )}
                 </div>
               ) : (
-                <div className="flex-grow space-y-6">
+                <div className="grow space-y-6">
                   {categories.map((cat) => {
                     return (
                       <div key={cat.id} className="space-y-1.5">

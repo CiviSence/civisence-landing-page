@@ -113,7 +113,7 @@ const WorkflowExample = () => {
         <div className="relative">
           {/* Horizontal connector line (desktop only) */}
           <motion.div
-            className="hidden lg:block absolute top-[72px] left-[8%] right-[8%] h-0.5 bg-gradient-to-r from-red-300 via-purple-300 to-green-300 rounded-full z-0"
+            className="hidden lg:block absolute top-18 left-[8%] right-[8%] h-0.5 bg-linear-to-r from-red-300 via-purple-300 to-green-300 rounded-full z-0"
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true }}
@@ -137,7 +137,7 @@ const WorkflowExample = () => {
               return (
                 <React.Fragment key={step.tag}>
                   <motion.article
-                    className="min-w-[240px] lg:min-w-0 snap-center flex flex-col items-center text-center"
+                    className="min-w-60 lg:min-w-0 snap-center flex flex-col items-center text-center"
                     variants={cardVariants}
                     role="listitem"
                   >
@@ -169,7 +169,7 @@ const WorkflowExample = () => {
 
                   {/* Arrow separator between cards — mobile only */}
                   {index < steps.length - 1 && (
-                    <div className="flex lg:hidden items-center justify-center min-w-[24px] shrink-0 self-center pt-6" aria-hidden="true">
+                    <div className="flex lg:hidden items-center justify-center min-w-6 shrink-0 self-center pt-6" aria-hidden="true">
                       <ChevronRight className="w-5 h-5 text-gray-300" />
                     </div>
                   )}

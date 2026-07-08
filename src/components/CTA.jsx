@@ -11,7 +11,7 @@ const CTA = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1] }}
-          className="relative overflow-hidden rounded-[3rem] bg-gradient-to-br from-primary to-secondary px-6 py-20 sm:px-12 md:px-20 md:py-28"
+          className="relative overflow-hidden rounded-[3rem] bg-linear-to-br from-primary to-secondary px-6 py-20 sm:px-12 md:px-20 md:py-28"
         >
           {/* Decorative circles */}
           <div className="pointer-events-none absolute -top-24 -left-24 h-72 w-72 rounded-full bg-white/10 blur-3xl" aria-hidden="true" />

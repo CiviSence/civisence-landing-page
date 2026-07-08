@@ -1,28 +1,19 @@
-import React, { Suspense, lazy, useEffect, useState } from 'react';
+import React, { Suspense, lazy, useEffect } from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { Analytics as VercelAnalytics } from '@vercel/analytics/react';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
 import SEO from './components/SEO';
+import Navbar from './components/Navbar';
 
-// Code splitting with React.lazy for performance optimization (Core Web Vitals)
-const SignupPaths = lazy(() => import('./components/SignupPaths'));
-const HowItWorks = lazy(() => import('./components/HowItWorks'));
-const HowItWorksOrg = lazy(() => import('./components/HowItWorksOrg'));
-const MultiOrg = lazy(() => import('./components/MultiOrg'));
-const Comparison = lazy(() => import('./components/Comparison'));
-const Features = lazy(() => import('./components/Features'));
-const DashboardPreview = lazy(() => import('./components/DashboardPreview'));
-const OrgFeatures = lazy(() => import('./components/OrgFeatures'));
-const Tracking = lazy(() => import('./components/Tracking'));
-const Analytics = lazy(() => import('./components/Analytics'));
-const WorkflowExample = lazy(() => import('./components/WorkflowExample'));
-const DownloadApp = lazy(() => import('./components/DownloadApp'));
-const Testimonials = lazy(() => import('./components/Testimonials'));
-const FAQ = lazy(() => import('./components/FAQ'));
-const Contact = lazy(() => import('./components/Contact'));
-const CTA = lazy(() => import('./components/CTA'));
-const Footer = lazy(() => import('./components/Footer'));
+// Pages
+import HomePage from './pages/HomePage';
+
+// Lazy-loaded pages
+const LoginPortalPage = lazy(() => import('./pages/LoginPortalPage'));
+const SignupPortalPage = lazy(() => import('./pages/SignupPortalPage'));
 const LegalPage = lazy(() => import('./components/LegalPage'));
+
+// Lazy-loaded footer for legal pages
+const Footer = lazy(() => import('./components/Footer'));
 
 const legalRoutes = [
   '/privacy',
@@ -37,105 +28,100 @@ const legalRoutes = [
   '/contact-support',
   '/content-moderation',
   '/copyright-ip',
-  '/data-deletion'
+  '/data-deletion',
 ];
 
-function App() {
-  const [currentPath, setCurrentPath] = useState(() => window.location.pathname || '/');
+// Wrapper for legal pages (includes Navbar + Footer)
+const LegalPageWrapper = ({ path }) => (
+  <>
+    <SEO
+      title="CiviSence | Legal Documentation"
+      description="Review the CiviSence privacy, security, accessibility, terms, and cookie policies."
+      canonical={`https://civisence.in${path}`}
+    />
+    <Navbar />
+    <main id="main-content" aria-label="Main Content">
+      <Suspense fallback={<div className="py-24 flex justify-center items-center text-gray-400" aria-live="polite">Loading legal content...</div>}>
+        <LegalPage currentPath={path} />
+      </Suspense>
+    </main>
+    <Suspense fallback={null}>
+      <Footer />
+    </Suspense>
+  </>
+);
 
+// Handles routes that should scroll to a section on the homepage
+const ScrollRedirect = ({ hash }) => {
   useEffect(() => {
-    const handleUrlNavigation = () => {
-      const path = window.location.pathname || '/';
-      const hash = window.location.hash;
-      setCurrentPath(path);
+    window.location.replace(`/${hash}`);
+  }, [hash]);
+  return null;
+};
 
-      if (legalRoutes.includes(path)) {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-        return;
-      }
-
-      const routeMap = {
-        '/features': '#roles',
-        '/how-it-works': '#how-it-works',
-        '/organizations': '#for-organizations',
-        '/analytics': '#dashboard',
-        '/faq': '#faq',
-        '/contact': '#contact',
-        '/login': 'https://civisence.in/login',
-        '/signup': 'https://civisence.in/register'
-      };
-
-      if (routeMap[path]) {
-        if (path === '/login' || path === '/signup') {
-          window.location.href = routeMap[path];
-          return;
-        }
-        const targetId = routeMap[path].replace('#', '');
-        setTimeout(() => {
-          const el = document.getElementById(targetId);
-          if (el) el.scrollIntoView({ behavior: 'smooth' });
-        }, 500);
-      } else if (hash) {
-        setTimeout(() => {
-          const el = document.querySelector(hash);
-          if (el) el.scrollIntoView({ behavior: 'smooth' });
-        }, 500);
-      }
-    };
-
-    handleUrlNavigation();
-    window.addEventListener('popstate', handleUrlNavigation);
-    return () => window.removeEventListener('popstate', handleUrlNavigation);
-  }, []);
-
-  const isLegalRoute = legalRoutes.includes(currentPath);
-
+function App() {
   return (
-    <div className="min-h-screen">
-      <SEO
-        title={isLegalRoute ? 'CiviSence | Legal Documentation' : undefined}
-        description={isLegalRoute ? 'Review the CiviSence privacy, security, accessibility, terms, and cookie policies.' : undefined}
-        canonical={isLegalRoute ? `https://civisence.in${currentPath}` : undefined}
-      />
-      <Navbar />
-      <main id="main-content" aria-label="Main Content">
-        {isLegalRoute ? (
-          <Suspense fallback={<div className="py-24 flex justify-center items-center text-gray-400" aria-live="polite">Loading legal content...</div>}>
-            <LegalPage currentPath={currentPath} />
-          </Suspense>
-        ) : (
-          <>
-            <Hero />
-            <Suspense fallback={<div className="py-12 flex justify-center items-center text-gray-400" aria-live="polite">Loading content...</div>}>
-              <SignupPaths />
-              <HowItWorks />
-              <HowItWorksOrg />
-              <MultiOrg />
-              <Comparison />
-              <Features />
-              <DashboardPreview />
-              <OrgFeatures />
-              <Tracking />
-              <Analytics />
-              <WorkflowExample />
-              <DownloadApp />
-              <Testimonials />
-              <FAQ />
-              <Contact />
-              <CTA />
-              <Footer />
+    <>
+      <Routes>
+        {/* Home */}
+        <Route
+          path="/"
+          element={
+            <>
+              <SEO />
+              <Navbar />
+              <main id="main-content" aria-label="Main Content">
+                <HomePage />
+              </main>
+            </>
+          }
+        />
+
+        {/* Login Portal */}
+        <Route
+          path="/login"
+          element={
+            <Suspense fallback={<div className="min-h-screen flex items-center justify-center text-gray-400">Loading...</div>}>
+              <LoginPortalPage />
             </Suspense>
-          </>
-        )}
-      </main>
-      {isLegalRoute && (
-        <Suspense fallback={null}>
-          <Footer />
-        </Suspense>
-      )}
+          }
+        />
+
+        {/* Signup Portal */}
+        <Route
+          path="/signup"
+          element={
+            <Suspense fallback={<div className="min-h-screen flex items-center justify-center text-gray-400">Loading...</div>}>
+              <SignupPortalPage />
+            </Suspense>
+          }
+        />
+
+        {/* Section-scroll convenience routes */}
+        <Route path="/features" element={<ScrollRedirect hash="#roles" />} />
+        <Route path="/how-it-works" element={<ScrollRedirect hash="#how-it-works" />} />
+        <Route path="/organizations" element={<ScrollRedirect hash="#for-organizations" />} />
+        <Route path="/analytics" element={<ScrollRedirect hash="#dashboard" />} />
+        <Route path="/faq" element={<ScrollRedirect hash="#faq" />} />
+        <Route path="/contact" element={<ScrollRedirect hash="#contact" />} />
+
+        {/* Legal routes */}
+        {legalRoutes.map((path) => (
+          <Route
+            key={path}
+            path={path}
+            element={<LegalPageWrapper path={path} />}
+          />
+        ))}
+
+        {/* Catch-all: redirect to home */}
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+
       <VercelAnalytics />
-    </div>
+    </>
   );
 }
 
 export default App;
+

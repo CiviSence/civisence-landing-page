@@ -53,7 +53,7 @@ const Comparison = () => {
             className="bg-white rounded-3xl border border-gray-100 shadow-xl overflow-hidden flex flex-col"
           >
             {/* Card Header */}
-            <div className="bg-gradient-to-br from-blue-500 to-blue-600 px-8 py-8 relative overflow-hidden">
+            <div className="bg-linear-to-br from-blue-500 to-blue-600 px-8 py-8 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full blur-2xl -mr-10 -mt-10" aria-hidden="true" />
               <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/5 rounded-full blur-xl -ml-6 -mb-6" aria-hidden="true" />
               <div className="relative z-10 flex items-center gap-4 mb-4">
@@ -117,7 +117,7 @@ const Comparison = () => {
             className="bg-white rounded-3xl border border-gray-100 shadow-xl overflow-hidden flex flex-col"
           >
             {/* Card Header */}
-            <div className="bg-gradient-to-br from-primary to-secondary px-8 py-8 relative overflow-hidden">
+            <div className="bg-linear-to-br from-primary to-secondary px-8 py-8 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full blur-2xl -mr-10 -mt-10" aria-hidden="true" />
               <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/5 rounded-full blur-xl -ml-6 -mb-6" aria-hidden="true" />
               <div className="relative z-10 flex items-center gap-4 mb-4">

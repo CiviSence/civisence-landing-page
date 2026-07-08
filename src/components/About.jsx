@@ -67,7 +67,7 @@ const About = () => {
             transition={{ duration: 0.6 }}
             className="relative"
           >
-            <div className="aspect-4/3 rounded-3xl overflow-hidden shadow-2xl relative bg-gradient-to-br from-gray-900 to-gray-800 p-8 flex flex-col justify-between border border-gray-700">
+            <div className="aspect-4/3 rounded-3xl overflow-hidden shadow-2xl relative bg-linear-to-br from-gray-900 to-gray-800 p-8 flex flex-col justify-between border border-gray-700">
               {/* Abstract decorative elements */}
               <div className="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-3xl" aria-hidden="true" />
               <div className="absolute bottom-0 left-0 w-48 h-48 bg-secondary/20 rounded-full blur-3xl" aria-hidden="true" />
