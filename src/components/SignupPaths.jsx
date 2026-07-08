@@ -41,7 +41,7 @@ const paths = [
       'Register your municipality, campus, or enterprise on CiviSence',
       'Create a dedicated Smart City or Campus Issue Management portal',
       'Invite members, assign tasks to staff, and automate SLAs',
-      'Utilize AI-assisted issue routing and duplicate detection',
+      'Utilize issue routing and duplicate detection',
       'Access real-time analytics and resolution performance metrics',
     ],
     cta: 'Join Your Organization',

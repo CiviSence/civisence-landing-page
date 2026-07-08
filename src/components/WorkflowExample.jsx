@@ -31,7 +31,7 @@ const steps = [
   },
   {
     tag: 'Geo-Tagging',
-    description: 'He submits the complaint with an AI-detected photo and precise GPS location',
+    description: 'He submits the complaint with photo and precise GPS location',
     icon: Camera,
     color: 'bg-indigo-50',
     iconColor: 'text-indigo-500',

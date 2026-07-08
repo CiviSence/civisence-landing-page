@@ -59,7 +59,7 @@ const Footer = () => {
               </span>
             </div>
             <p className="text-zinc-400 text-xs leading-relaxed max-w-sm mb-6 font-medium">
-              The AI-powered civic issue reporting and smart city management ecosystem designed for transparency, SLA accountability, and fast community resolution.
+              The civic issue reporting and smart city management ecosystem designed for transparency, SLA accountability, and fast community resolution.
             </p>
             <div className="flex space-x-3.5">
               <a href="https://x.com/CiviSence" target="_blank" rel="noopener noreferrer" aria-label="Follow CiviSence on Twitter / X" className="w-9 h-9 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 hover:bg-zinc-850 hover:text-white transition-colors focus:outline-hidden focus:ring-1 focus:ring-zinc-700">

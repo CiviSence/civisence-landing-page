@@ -20,7 +20,7 @@ const DashboardPreview = () => {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="inline-block text-primary-light font-semibold tracking-wide uppercase text-sm mb-3">Platform Preview</span>
           <h2 id="dashboard-heading" className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">
-            AI-Powered Issue Resolution Dashboard
+            Issue Resolution Dashboard
           </h2>
           <p className="text-lg text-gray-400">
             An intuitive, responsive interface for citizens reporting geo-tagged complaints, municipalities monitoring SLA analytics, and staff resolving field tasks.

@@ -31,7 +31,7 @@ const About = () => {
                     <Target className="text-primary w-6 h-6" />
                   </div>
                   <h3 className="font-bold text-gray-900 mb-2 text-lg m-0">Our Mission</h3>
-                  <p className="text-sm text-gray-600 m-0">To provide a seamless, AI-assisted digital workflow for managing civic issues efficiently.</p>
+                  <p className="text-sm text-gray-600 m-0">To provide a seamless digital workflow for managing civic issues efficiently.</p>
                 </article>
                 <article className="bg-secondary/5 p-6 rounded-3xl border border-secondary/10">
                   <div className="bg-white w-12 h-12 rounded-xl flex items-center justify-center shadow-sm mb-4" aria-hidden="true">

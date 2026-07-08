@@ -6,7 +6,7 @@ const faqs = [
   {
     question: 'What is CiviSence?',
     answer:
-      'CiviSence is an AI-powered civic issue reporting and management platform. It empowers citizens to report geo-tagged public grievances with AI photo verification, and enables municipalities, smart campuses, residential societies, and enterprises to resolve civic complaints through transparent SLA tracking dashboards.',
+      'CiviSence is an civic issue reporting and management platform. It empowers citizens to report geo-tagged public grievances with AI photo verification, and enables municipalities, smart campuses, residential societies, and enterprises to resolve civic complaints through transparent SLA tracking dashboards.',
   },
   {
     question: 'What is the difference between Global and Organization issues?',

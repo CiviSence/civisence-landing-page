@@ -91,7 +91,7 @@ const CTA = () => {
               transition={{ duration: 0.6, delay: 0.5 }}
               className="mt-8 text-sm text-white/80 font-medium"
             >
-              Free to use&nbsp; •&nbsp; No credit card required&nbsp; •&nbsp; AI-powered SLA tracking
+              Free to use&nbsp; •&nbsp; No credit card required&nbsp; •&nbsp; SLA tracking
             </motion.p>
           </div>
         </motion.div>

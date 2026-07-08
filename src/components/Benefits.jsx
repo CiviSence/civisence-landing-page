@@ -14,7 +14,7 @@ const Benefits = () => {
       title: "For Campuses & Municipalities",
       color: "bg-purple-50 border-purple-100",
       textColor: "text-primary",
-      items: ["Automated SLA maintenance", "AI-assisted digital workflow", "Eliminated paper complaints", "Real-time performance analytics", "Institutional accountability"]
+      items: ["Automated SLA maintenance", "digital workflow", "Eliminated paper complaints", "Real-time performance analytics", "Institutional accountability"]
     },
     {
       title: "For Field Maintenance Staff",

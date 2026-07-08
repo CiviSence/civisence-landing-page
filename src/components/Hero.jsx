@@ -21,11 +21,11 @@ const Hero = () => {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 text-blue-600 font-medium text-sm mb-6 border border-blue-100">
               <Building2 size={16} aria-hidden="true" />
-              <span>AI-Powered Smart City &amp; Campus Platform</span>
+              <span>Smart City &amp; Campus Platform</span>
             </div>
             
             <h1 className="text-5xl lg:text-7xl font-bold tracking-tight text-gray-900 mb-6 leading-tight">
-              AI-Powered Civic Issue Management with <br />
+              Civic Issue Management with <br />
               <span className="text-primary">CiviSence</span>
             </h1>
             
@@ -87,7 +87,7 @@ const Hero = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-20 relative z-20">
           {[
             { icon: <FileText className="w-6 h-6 text-primary" aria-hidden="true" />, title: 'Geo-Tagged Reporting', desc: 'Report complaints instantly with GPS location and image auto-detection.' },
-            { icon: <Activity className="w-6 h-6 text-primary" aria-hidden="true" />, title: 'AI-Assisted Workflows', desc: 'Smart routing, duplicate detection, and automated priority assignments.' },
+            { icon: <Activity className="w-6 h-6 text-primary" aria-hidden="true" />, title: 'People powered Workflows', desc: 'Smart routing, duplicate detection, and automated priority assignments.' },
             { icon: <Users className="w-6 h-6 text-primary" aria-hidden="true" />, title: 'Real-Time Tracking', desc: 'Monitor resolution SLAs and live progress feeds from start to finish.' },
             { icon: <ShieldCheck className="w-6 h-6 text-primary" aria-hidden="true" />, title: 'Smart City Analytics', desc: 'Data-driven issue resolution dashboards for campuses and municipalities.' },
           ].map((feature, idx) => (

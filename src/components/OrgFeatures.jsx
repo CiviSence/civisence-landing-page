@@ -43,7 +43,7 @@ const features = [
     iconColor: 'text-amber-600',
   },
   {
-    title: 'AI-Assisted Pipeline',
+    title: 'People assisted Pipeline',
     description:
       'Smart priority routing and automated workflow assignment from submission to final resolution',
     icon: GitBranch,

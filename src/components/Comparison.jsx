@@ -15,7 +15,7 @@ const orgBullets = [
   'Visible only within your private institutional portal',
   'Internal campus issue management and facility maintenance',
   'Managed by internal organization admins and field staff',
-  'Private AI-assisted resolution workflow and internal metrics',
+  'Private resolution workflow and internal metrics',
 ];
 
 const Comparison = () => {
