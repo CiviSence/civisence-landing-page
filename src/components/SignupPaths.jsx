@@ -27,7 +27,7 @@ const paths = [
   },
   {
     id: 'organization',
-    title: 'For Organizations & Campuses',
+    title: 'Organizations & Campuses',
     icon: Building2,
     tint: 'purple',
     gradient: 'from-primary to-primary-dark',
@@ -45,7 +45,7 @@ const paths = [
       'Access real-time analytics and resolution performance metrics',
     ],
     cta: 'Join Your Organization',
-    href: 'https://civisence.in/register',
+    href: '/organizations',
   },
 ];
 
@@ -90,10 +90,7 @@ const SignupPaths = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary font-medium text-sm mb-4">
-            <ArrowRight size={16} aria-hidden="true" />
-            <span>AI Civic Issue Reporting</span>
-          </div>
+          
           <h2 id="signup-heading" className="text-3xl md:text-5xl font-bold text-gray-900 tracking-tight">
             Two Ways to Get Started
           </h2>

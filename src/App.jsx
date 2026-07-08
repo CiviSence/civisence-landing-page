@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 
 // Pages
 import HomePage from './pages/HomePage';
+import About from './components/About';
 
 // Lazy-loaded portal pages
 const LoginPortalPage = lazy(() => import('./pages/LoginPortalPage'));
@@ -125,7 +126,7 @@ function App() {
         <Route
           path="/organizations"
           element={
-            <PageLayout seoTitle="For Organizations | CiviSence" seoDescription="CiviSence for municipalities, campuses, and enterprises.">
+            <PageLayout seoTitle="Organizations | CiviSence" seoDescription="CiviSence for municipalities, campuses, and enterprises.">
               <OrganizationsPage />
             </PageLayout>
           }
@@ -135,6 +136,14 @@ function App() {
           element={
             <PageLayout seoTitle="Contact Us | CiviSence" seoDescription="Get in touch with the CiviSence team.">
               <ContactPage />
+            </PageLayout>
+          }
+        />
+        <Route
+          path="/about"
+          element={
+            <PageLayout seoTitle="About | CiviSence" seoDescription="details about civisence">
+              <About/>
             </PageLayout>
           }
         />

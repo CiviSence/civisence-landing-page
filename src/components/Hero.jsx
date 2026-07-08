@@ -49,7 +49,7 @@ const Hero = () => {
               </span>
             </h1>
 
-            <p className="text-md lg:text-xl text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0">
+            <p className="text-md lg:text-md text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0">
               Empowering citizens, campuses, municipalities, and organizations
               to report complaints and issues, and track real-time resolution
               with 100% transparency.
