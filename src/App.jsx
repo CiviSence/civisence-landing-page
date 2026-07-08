@@ -60,8 +60,8 @@ function App() {
         '/analytics': '#dashboard',
         '/faq': '#faq',
         '/contact': '#contact',
-        '/login': 'https://civisence-community.vercel.app/login',
-        '/signup': 'https://civisence-community.vercel.app/register'
+        '/login': 'https://civisence.in/login',
+        '/signup': 'https://civisence.in/register'
       };
 
       if (routeMap[path]) {
@@ -94,7 +94,7 @@ function App() {
       <SEO
         title={isLegalRoute ? 'CiviSence | Legal Documentation' : undefined}
         description={isLegalRoute ? 'Review the CiviSence privacy, security, accessibility, terms, and cookie policies.' : undefined}
-        canonical={isLegalRoute ? `https://civisence-community.vercel.app${currentPath}` : undefined}
+        canonical={isLegalRoute ? `https://civisence.in${currentPath}` : undefined}
       />
       <Navbar />
       <main id="main-content" aria-label="Main Content">
