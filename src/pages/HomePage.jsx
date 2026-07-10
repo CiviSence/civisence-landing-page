@@ -25,10 +25,9 @@ const Footer = lazy(() => import("../components/Footer"));
 
 const HomePage = () => {
   return (
-    <>
+    <div className="overflow-hidden">
       <Hero />
       <MultiOrg />
-
       <Analytics />
       <Categories />
       <DashboardPreview />
@@ -39,7 +38,7 @@ const HomePage = () => {
       <Testimonials />
       <FAQ />
       <Footer />
-    </>
+    </div>
   );
 };
 

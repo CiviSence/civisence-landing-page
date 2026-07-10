@@ -112,7 +112,7 @@ const Features = () => {
             id="roles-heading"
             className="text-2xl sm:text-4xl lg:text-5xl font-bold text-gray-900 tracking-tight mb-3 sm:mb-4"
           >
-            Three Roles, One AI Ecosystem
+            Three Dashboards, One Ecosystem
           </h2>
           <p className="text-sm sm:text-lg text-gray-600 max-w-2xl mx-auto">
             Every participant in the Smart City and campus community gets

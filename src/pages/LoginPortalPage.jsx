@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { User, Briefcase, Building2, ShieldCheck, ArrowRight, ArrowLeft, Lock } from 'lucide-react';
 import Logo from '../components/Logo';
+import Navbar from '@/components/Navbar';
 
 // In dev, the actual auth app is at civisence.in. The portal links there directly.
-const AUTH_BASE = 'https://civisence.in';
+const AUTH_BASE = 'civisence.in';
 
 const loginTypes = [
   {
@@ -21,11 +22,11 @@ const loginTypes = [
     badgeText: 'text-blue-600',
     borderHover: 'hover:border-blue-300',
     buttonStyle: 'bg-blue-600 hover:bg-blue-700 shadow-blue-600/30',
-    href: `${AUTH_BASE}/login?role=user`,
+    href: `https://app.${AUTH_BASE}/login`,
   },
   {
-    id: 'staff',
-    title: 'Staff Login',
+    id: 'officials',
+    title: 'Admin/Staff Login',
     subtitle: 'Manage & resolve assigned issues',
     description:
       `Log in as staff or field officer to view your assigned complaints, update issue statuses, and collaborate with your organization's admin team.`,
@@ -36,7 +37,7 @@ const loginTypes = [
     badgeText: 'text-emerald-600',
     borderHover: 'hover:border-emerald-300',
     buttonStyle: 'bg-emerald-600 hover:bg-emerald-700 shadow-emerald-600/30',
-    href: `${AUTH_BASE}/login?role=staff`,
+    href: `https://admin.${AUTH_BASE}/login`,
   },
   {
     id: 'organization',
@@ -51,22 +52,7 @@ const loginTypes = [
     badgeText: 'text-violet-600',
     borderHover: 'hover:border-violet-300',
     buttonStyle: 'bg-violet-600 hover:bg-violet-700 shadow-violet-600/30',
-    href: `${AUTH_BASE}/login?role=organization`,
-  },
-  {
-    id: 'admin',
-    title: 'Admin Login',
-    subtitle: 'Platform-wide administration',
-    description:
-      'Log in as a platform administrator to manage organizations, oversee all system operations, configure settings, and access advanced analytics.',
-    icon: ShieldCheck,
-    gradient: 'from-rose-500 to-red-600',
-    glowColor: 'rgba(244,63,94,0.18)',
-    badgeBg: 'bg-rose-50',
-    badgeText: 'text-rose-600',
-    borderHover: 'hover:border-rose-300',
-    buttonStyle: 'bg-rose-600 hover:bg-rose-700 shadow-rose-600/30',
-    href: `${AUTH_BASE}/login?role=admin`,
+    href: `https://${AUTH_BASE}`,
   },
 ];
 
@@ -101,29 +87,7 @@ const LoginPortalPage = () => {
         aria-hidden="true"
       />
 
-      {/* Top nav bar */}
-      <header className="fixed top-0 left-0 right-0 z-50 glass border-b border-white/30 px-4 sm:px-6 lg:px-8 py-4">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <Link
-            to="/"
-            className="flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-primary rounded-lg"
-            aria-label="Back to CiviSence Home"
-          >
-            <div className="text-primary">
-              <Logo className="w-8 h-8" />
-            </div>
-            <span className="text-xl font-bold text-gray-900 tracking-tight">CiviSence</span>
-          </Link>
-
-          <Link
-            to="/"
-            className="flex items-center gap-2 text-gray-600 hover:text-primary transition-colors font-medium text-sm px-3 py-2 rounded-full hover:bg-primary/5"
-          >
-            <ArrowLeft size={16} aria-hidden="true" />
-            Back to Home
-          </Link>
-        </div>
-      </header>
+     <Navbar/>
 
       {/* Main content */}
       <main className="pt-24 pb-20 px-4 sm:px-6 lg:px-8">

@@ -23,7 +23,7 @@ const paths = [
       'Track real-time issue resolution from your interactive dashboard',
     ],
     cta: 'Report Issues',
-    href: 'https://civisence.in/register',
+    href: 'https://app.civisence.in/register',
   },
   {
     id: 'organization',

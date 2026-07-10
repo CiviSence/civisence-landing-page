@@ -19,12 +19,12 @@ const signupTypes = [
     borderHover: 'hover:border-blue-300',
     buttonStyle: 'bg-blue-600 hover:bg-blue-700 shadow-blue-600/30',
     badge: 'Free Forever',
-    href: 'https://civisence.in/register?role=user',
+    href: 'https://app.civisence.in/register',
   },
   {
     id: 'staff',
-    title: 'Staff Member',
-    subtitle: 'Join your organization as staff',
+    title: 'Admin and Staff Member',
+    subtitle: 'Join your organization',
     description:
       'Register as a staff or field officer under your organization. Manage assigned issues, collaborate with admin, and update resolutions.',
     icon: Briefcase,
@@ -35,7 +35,7 @@ const signupTypes = [
     borderHover: 'hover:border-emerald-300',
     buttonStyle: 'bg-emerald-600 hover:bg-emerald-700 shadow-emerald-600/30',
     badge: 'Invite Required',
-    href: 'https://civisence.in/register?role=staff',
+    href: 'https://admin.civisence.in/signup',
   },
   {
     id: 'organization',
@@ -52,23 +52,7 @@ const signupTypes = [
     buttonStyle: 'bg-violet-600 hover:bg-violet-700 shadow-violet-600/30',
     badge: 'Enterprise Ready',
     href: 'https://civisence.in/register?role=organization',
-  },
-  {
-    id: 'admin',
-    title: 'Administrator',
-    subtitle: 'Platform-wide administration',
-    description:
-      'Register as a platform administrator to manage the ecosystem, oversee organizations, and access advanced system configuration.',
-    icon: ShieldCheck,
-    gradient: 'from-rose-500 to-red-600',
-    glowColor: 'rgba(244,63,94,0.18)',
-    badgeBg: 'bg-rose-50',
-    badgeText: 'text-rose-600',
-    borderHover: 'hover:border-rose-300',
-    buttonStyle: 'bg-rose-600 hover:bg-rose-700 shadow-rose-600/30',
-    badge: 'Restricted Access',
-    href: 'https://civisence.in/register?role=admin',
-  },
+  }
 ];
 
 const containerVariants = {
