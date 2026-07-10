@@ -1,26 +1,26 @@
 import React, { Suspense, lazy, useEffect } from "react";
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { Analytics as VercelAnalytics } from "@vercel/analytics/react";
-import SEO from "./components/SEO";
-import Navbar from "./components/Navbar";
+import SEO from "./components/layout/SEO";
+import Navbar from "./components/layout/Navbar";
 
 // Pages
-import HomePage from "./pages/HomePage";
-import About from "./components/About";
+import HomePage from "./pages/main/HomePage";
+import About from "./components/sections/About";
 
 // Lazy-loaded portal pages
-const LoginPortalPage = lazy(() => import("./pages/LoginPortalPage"));
-const SignupPortalPage = lazy(() => import("./pages/SignupPortalPage"));
+const LoginPortalPage = lazy(() => import("./pages/auth/LoginPortalPage"));
+const SignupPortalPage = lazy(() => import("./pages/auth/SignupPortalPage"));
 
 // Lazy-loaded standalone section pages
-const FeaturesPage = lazy(() => import("./pages/FeaturesPage"));
-const OrganizationsPage = lazy(() => import("./pages/OrganizationsPage"));
-const ContactPage = lazy(() => import("./pages/ContactPage"));
-const FAQPage = lazy(() => import("./pages/FAQPage"));
+const FeaturesPage = lazy(() => import("./pages/main/FeaturesPage"));
+const OrganizationsPage = lazy(() => import("./pages/main/OrganizationsPage"));
+const ContactPage = lazy(() => import("./pages/main/ContactPage"));
+const FAQPage = lazy(() => import("./pages/main/FAQPage"));
 
 // Lazy-loaded legal + footer
-const LegalPage = lazy(() => import("./pages/LegalPage"));
-const Footer = lazy(() => import("./components/Footer"));
+const LegalPage = lazy(() => import("./pages/legal/LegalPage"));
+const Footer = lazy(() => import("./components/layout/Footer"));
 
 const legalRoutes = [
   "/privacy",

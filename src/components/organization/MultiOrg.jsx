@@ -117,7 +117,7 @@ const MultiOrg = () => {
         {/* Mobile View (< 640px): Compact Hub Grid */}
         <div className="block sm:hidden mb-12">
           <div className="flex flex-col items-center gap-6">
-            <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary to-primary-dark shadow-lg flex flex-col items-center justify-center text-white">
+            <div className="w-20 h-20 rounded-2xl bg-linear-to-br from-primary to-primary-dark shadow-lg flex flex-col items-center justify-center text-white">
               <User className="w-7 h-7 mb-0.5" />
               <span className="text-[10px] font-semibold tracking-wide uppercase">
                 You
@@ -132,7 +132,7 @@ const MultiOrg = () => {
                     className={`flex items-center gap-2.5 px-3.5 py-2.5 rounded-xl border bg-white shadow-xs ${org.accent}`}
                   >
                     <div
-                      className={`w-7 h-7 rounded-lg bg-gradient-to-br ${org.color} flex items-center justify-center shrink-0`}
+                      className={`w-7 h-7 rounded-lg bg-linear-to-br ${org.color} flex items-center justify-center shrink-0`}
                     >
                       <Icon className="w-3.5 h-3.5 text-white" />
                     </div>
@@ -215,7 +215,7 @@ const MultiOrg = () => {
               viewport={{ once: true }}
               transition={{ type: "spring", stiffness: 200, delay: 0.4 }}
             >
-              <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-primary to-primary-dark shadow-xl shadow-primary/25 flex flex-col items-center justify-center text-white">
+              <div className="w-24 h-24 rounded-2xl bg-linear-to-br from-primary to-primary-dark shadow-xl shadow-primary/25 flex flex-col items-center justify-center text-white">
                 <User className="w-8 h-8 mb-1" />
                 <span className="text-[10px] font-semibold tracking-wide uppercase">
                   You
@@ -267,7 +267,7 @@ const MultiOrg = () => {
                       className={`flex items-center gap-2.5 px-4 py-3 rounded-2xl border bg-white shadow-lg shadow-gray-100/50 whitespace-nowrap ${org.accent}`}
                     >
                       <div
-                        className={`w-8 h-8 rounded-lg bg-gradient-to-br ${org.color} flex items-center justify-center shrink-0`}
+                        className={`w-8 h-8 rounded-lg bg-linear-to-br ${org.color} flex items-center justify-center shrink-0`}
                       >
                         <Icon className="w-4 h-4 text-white" />
                       </div>

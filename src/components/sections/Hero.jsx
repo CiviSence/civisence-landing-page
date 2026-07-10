@@ -9,7 +9,7 @@ import {
   PlaySquareIcon,
   Download,
 } from "lucide-react";
-import Logo from "./Logo";
+import Logo from "../layout/Logo";
 
 const Hero = () => {
   return (

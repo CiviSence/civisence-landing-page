@@ -1,16 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { User, Briefcase, Building2, ShieldCheck, ArrowRight, ArrowLeft, Sparkles } from 'lucide-react';
-import Logo from '../components/Logo';
+import { User, Briefcase, Building2, ShieldCheck, ArrowRight, ArrowLeft, Lock } from 'lucide-react';
+import Logo from '../../components/layout/Logo';
+import Navbar from '../../components/layout/Navbar';
 
-const signupTypes = [
+// In dev, the actual auth app is at civisence.in. The portal links there directly.
+const AUTH_BASE = 'civisence.in';
+
+const loginTypes = [
   {
-    id: 'citizen',
-    title: 'Citizen / Student',
-    subtitle: 'Report civic issues for free',
+    id: 'user',
+    title: 'Citizen / User Login',
+    subtitle: 'Report & track civic issues',
     description:
-      'Sign up as a citizen or student. Report geo-tagged civic complaints, join organizations, and track your issues — completely free.',
+      'Log in as a citizen or student to report geo-tagged civic complaints, track resolution status, and interact with your community dashboard.',
     icon: User,
     gradient: 'from-blue-500 to-blue-600',
     glowColor: 'rgba(59,130,246,0.18)',
@@ -18,15 +22,14 @@ const signupTypes = [
     badgeText: 'text-blue-600',
     borderHover: 'hover:border-blue-300',
     buttonStyle: 'bg-blue-600 hover:bg-blue-700 shadow-blue-600/30',
-    badge: 'Free Forever',
-    href: 'https://app.civisence.in/register',
+    href: `https://app.${AUTH_BASE}/login`,
   },
   {
-    id: 'staff',
-    title: 'Admin and Staff Member',
-    subtitle: 'Join your organization',
+    id: 'officials',
+    title: 'Admin/Staff Login',
+    subtitle: 'Manage & resolve assigned issues',
     description:
-      'Register as a staff or field officer under your organization. Manage assigned issues, collaborate with admin, and update resolutions.',
+      `Log in as staff or field officer to view your assigned complaints, update issue statuses, and collaborate with your organization's admin team.`,
     icon: Briefcase,
     gradient: 'from-emerald-500 to-teal-600',
     glowColor: 'rgba(16,185,129,0.18)',
@@ -34,15 +37,14 @@ const signupTypes = [
     badgeText: 'text-emerald-600',
     borderHover: 'hover:border-emerald-300',
     buttonStyle: 'bg-emerald-600 hover:bg-emerald-700 shadow-emerald-600/30',
-    badge: 'Invite Required',
-    href: 'https://admin.civisence.in/signup',
+    href: `https://admin.${AUTH_BASE}/login`,
   },
   {
     id: 'organization',
-    title: 'Organization',
-    subtitle: 'Set up your civic management portal',
+    title: 'Organization Login',
+    subtitle: 'Manage your organization portal',
     description:
-      'Register your municipality, campus, or enterprise. Create a dedicated issue management system, invite members, and access powerful analytics.',
+      'Log in to your municipality, campus, or enterprise portal to oversee issue routing, staff management, SLA tracking, and analytics.',
     icon: Building2,
     gradient: 'from-violet-500 to-purple-600',
     glowColor: 'rgba(139,92,246,0.18)',
@@ -50,9 +52,8 @@ const signupTypes = [
     badgeText: 'text-violet-600',
     borderHover: 'hover:border-violet-300',
     buttonStyle: 'bg-violet-600 hover:bg-violet-700 shadow-violet-600/30',
-    badge: 'Enterprise Ready',
-    href: 'https://civisence.in/register?role=organization',
-  }
+    href: `https://${AUTH_BASE}`,
+  },
 ];
 
 const containerVariants = {
@@ -65,50 +66,28 @@ const cardVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
 };
 
-const SignupPortalPage = () => {
+const LoginPortalPage = () => {
   return (
     <div className="min-h-screen bg-gray-50 relative overflow-hidden">
       {/* Background decorative blobs */}
       <div
-        className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full pointer-events-none"
+        className="absolute top-0 left-0 w-150 h-150 rounded-full pointer-events-none"
         style={{
           background: 'radial-gradient(circle, rgba(108,99,255,0.08) 0%, transparent 70%)',
-          transform: 'translate(30%, -30%)',
+          transform: 'translate(-30%, -30%)',
         }}
         aria-hidden="true"
       />
       <div
-        className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full pointer-events-none"
+        className="absolute bottom-0 right-0 w-125 h-125 rounded-full pointer-events-none"
         style={{
           background: 'radial-gradient(circle, rgba(124,58,237,0.08) 0%, transparent 70%)',
-          transform: 'translate(-30%, 30%)',
+          transform: 'translate(30%, 30%)',
         }}
         aria-hidden="true"
       />
 
-      {/* Top nav bar */}
-      <header className="fixed top-0 left-0 right-0 z-50 glass border-b border-white/30 px-4 sm:px-6 lg:px-8 py-4">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <Link
-            to="/"
-            className="flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-primary rounded-lg"
-            aria-label="Back to CiviSence Home"
-          >
-            <div className="text-primary">
-              <Logo className="w-8 h-8" />
-            </div>
-            <span className="text-xl font-bold text-gray-900 tracking-tight">CiviSence</span>
-          </Link>
-
-          <Link
-            to="/"
-            className="flex items-center gap-2 text-gray-600 hover:text-primary transition-colors font-medium text-sm px-3 py-2 rounded-full hover:bg-primary/5"
-          >
-            <ArrowLeft size={16} aria-hidden="true" />
-            Back to Home
-          </Link>
-        </div>
-      </header>
+     <Navbar/>
 
       {/* Main content */}
       <main className="pt-24 pb-20 px-4 sm:px-6 lg:px-8">
@@ -121,11 +100,11 @@ const SignupPortalPage = () => {
             className="text-center mb-14"
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary font-medium text-sm mb-5">
-              <Sparkles size={15} aria-hidden="true" />
-              <span>Create Your Account</span>
+              <Lock size={15} aria-hidden="true" />
+              <span>Secure Login Portal</span>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight mb-4">
-              Get Started with{' '}
+              Welcome Back to{' '}
               <span
                 style={{
                   backgroundImage: 'linear-gradient(135deg, #6C63FF, #7C3AED)',
@@ -138,27 +117,28 @@ const SignupPortalPage = () => {
               </span>
             </h1>
             <p className="text-lg text-gray-500 max-w-xl mx-auto leading-relaxed">
-              Choose your account type to get started. Citizens sign up for free — no credit card needed.
+              Select your account type below to securely log in to your dashboard.
             </p>
           </motion.div>
 
-          {/* Signup type cards */}
+          {/* Login type cards */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
             animate="visible"
             className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6"
           >
-            {signupTypes.map((type) => {
+            {loginTypes.map((type) => {
               const Icon = type.icon;
               return (
                 <motion.div
                   key={type.id}
                   variants={cardVariants}
                   className={`group bg-white rounded-3xl border border-gray-100 ${type.borderHover} shadow-sm hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col overflow-hidden`}
+                  style={{ '--glow': type.glowColor }}
                 >
                   {/* Gradient header */}
-                  <div className={`bg-gradient-to-br ${type.gradient} p-7 relative`}>
+                  <div className={`bg-linear-to-br ${type.gradient} p-7 relative`}>
                     <div
                       className="absolute inset-0 opacity-20"
                       aria-hidden="true"
@@ -168,17 +148,13 @@ const SignupPortalPage = () => {
                         backgroundSize: '20px 20px',
                       }}
                     />
-                    {/* Badge */}
-                    <div className="relative flex items-start justify-between mb-4">
-                      <div className="bg-white/20 backdrop-blur-sm w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg">
+                    <div className="relative">
+                      <div className="bg-white/20 backdrop-blur-sm w-14 h-14 rounded-2xl flex items-center justify-center mb-4 shadow-lg">
                         <Icon size={26} className="text-white" aria-hidden="true" />
                       </div>
-                      <span className="bg-white/20 backdrop-blur-sm text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full border border-white/30">
-                        {type.badge}
-                      </span>
+                      <h2 className="text-lg font-bold text-white leading-snug">{type.title}</h2>
+                      <p className="text-white/70 text-xs mt-1 font-medium">{type.subtitle}</p>
                     </div>
-                    <h2 className="text-lg font-bold text-white leading-snug relative">{type.title}</h2>
-                    <p className="text-white/70 text-xs mt-1 font-medium relative">{type.subtitle}</p>
                   </div>
 
                   {/* Body */}
@@ -189,9 +165,9 @@ const SignupPortalPage = () => {
                       href={type.href}
                       rel="noopener noreferrer"
                       className={`mt-6 w-full inline-flex items-center justify-center gap-2 px-5 py-3 ${type.buttonStyle} text-white font-semibold rounded-xl shadow-lg transition-all duration-300 group/btn text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary`}
-                      aria-label={`Sign up as ${type.title}`}
+                      aria-label={`Login as ${type.title}`}
                     >
-                      Get Started
+                      Login
                       <ArrowRight
                         size={16}
                         className="group-hover/btn:translate-x-1 transition-transform duration-300"
@@ -212,9 +188,9 @@ const SignupPortalPage = () => {
             className="text-center mt-12"
           >
             <p className="text-gray-400 text-sm">
-              Already have an account?{' '}
-              <Link to="/login" className="text-primary hover:text-primary-dark font-medium underline underline-offset-2 transition-colors">
-                Log in here
+              Don't have an account?{' '}
+              <Link to="/signup" className="text-primary hover:text-primary-dark font-medium underline underline-offset-2 transition-colors">
+                Sign up for free
               </Link>
             </p>
           </motion.div>
@@ -224,4 +200,4 @@ const SignupPortalPage = () => {
   );
 };
 
-export default SignupPortalPage;
+export default LoginPortalPage;

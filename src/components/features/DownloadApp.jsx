@@ -1,7 +1,7 @@
 import React from 'react';
 import { Smartphone, Download } from 'lucide-react';
 
-import Logo from './Logo';
+import Logo from '../layout/Logo';
 
 const DownloadApp = () => {
   return (

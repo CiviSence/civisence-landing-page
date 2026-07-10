@@ -12,21 +12,21 @@ import {
   Info,
 } from "lucide-react";
 
-import SEO from "../components/SEO";
+import SEO from "../../components/layout/SEO";
 
-import acceptableUsePolicy from "../../legal/acceptable_use_policy.md?raw";
-import accessibilityStatement from "../../legal/accessibility_statement.md?raw";
-import aiTransparencyPolicy from "../../legal/ai_transparency_policy.md?raw";
-import childrensPrivacyPolicy from "../../legal/childrens_privacy_policy.md?raw";
-import communityGuidelines from "../../legal/community_guidelines.md?raw";
-import contactSupportPolicy from "../../legal/contact_support_policy.md?raw";
-import contentModerationPolicy from "../../legal/content_moderation_policy.md?raw";
-import cookiePolicy from "../../legal/cookie_policy.md?raw";
-import copyrightIpPolicy from "../../legal/copyright_ip_policy.md?raw";
-import dataDeletionPolicy from "../../legal/data_deletion_policy.md?raw";
-import privacyPolicy from "../../legal/privacy_policy.md?raw";
-import securityPolicy from "../../legal/security_policy.md?raw";
-import termsOfService from "../../legal/terms_of_service.md?raw";
+import acceptableUsePolicy from "../../content/legal/acceptable_use_policy.md?raw";
+import accessibilityStatement from "../../content/legal/accessibility_statement.md?raw";
+import aiTransparencyPolicy from "../../content/legal/ai_transparency_policy.md?raw";
+import childrensPrivacyPolicy from "../../content/legal/childrens_privacy_policy.md?raw";
+import communityGuidelines from "../../content/legal/community_guidelines.md?raw";
+import contactSupportPolicy from "../../content/legal/contact_support_policy.md?raw";
+import contentModerationPolicy from "../../content/legal/content_moderation_policy.md?raw";
+import cookiePolicy from "../../content/legal/cookie_policy.md?raw";
+import copyrightIpPolicy from "../../content/legal/copyright_ip_policy.md?raw";
+import dataDeletionPolicy from "../../content/legal/data_deletion_policy.md?raw";
+import privacyPolicy from "../../content/legal/privacy_policy.md?raw";
+import securityPolicy from "../../content/legal/security_policy.md?raw";
+import termsOfService from "../../content/legal/terms_of_service.md?raw";
 
 const legalDocs = [
   {

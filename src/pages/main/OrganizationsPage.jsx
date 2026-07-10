@@ -21,7 +21,7 @@ import {
 import {
   getOrganizations,
   registerOrganization,
-} from "../api/organization/org.api.js";
+} from "../../api/organization/org.api.js";
 
 
 // ─── Status pill ─────────────────────────────────────────────────────────────

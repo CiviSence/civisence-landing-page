@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import userDashboardImg from "../assets/dashboard/user-dashboard.png";
-import adminDashboardImg from "../assets/dashboard/admin-dashboard.png";
-import staffDashboardImg from "../assets/dashboard/staff-dashboard.png";
+import userDashboardImg from "../../assets/dashboard/user-dashboard.png";
+import adminDashboardImg from "../../assets/dashboard/admin-dashboard.png";
+import staffDashboardImg from "../../assets/dashboard/staff-dashboard.png";
 
 const DashboardPreview = () => {
   const [activeTab, setActiveTab] = useState("citizen");
@@ -81,7 +81,7 @@ const DashboardPreview = () => {
                 onClick={() => setActiveTab(tab.id)}
                 className={`px-3.5 sm:px-6 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 cursor-pointer focus:outline-hidden focus:ring-2 focus:ring-primary whitespace-nowrap ${
                   activeTab === tab.id
-                    ? "bg-gradient-to-r from-primary to-secondary text-white shadow-lg shadow-primary/30 font-semibold"
+                    ? "bg-linear-to-r from-primary to-secondary text-white shadow-lg shadow-primary/30 font-semibold"
                     : "text-gray-400 hover:text-white hover:bg-gray-700/60"
                 }`}
               >
@@ -127,7 +127,7 @@ const DashboardPreview = () => {
                 <img
                   src={activeTabData.img}
                   alt={activeTabData.alt}
-                  className="w-full h-auto max-h-[700px] object-cover object-top block"
+                  className="w-full h-auto max-h-175 object-cover object-top block"
                   loading="lazy"
                 />
               </motion.div>
