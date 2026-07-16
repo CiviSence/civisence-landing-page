@@ -11,19 +11,19 @@ const DashboardPreview = () => {
     {
       id: "citizen",
       label: "Citizen View",
-      img: userDashboardImg,
+      img: "https://res.cloudinary.com/dkekgrdud/image/upload/v1783856300/Screenshot_2026-07-08_192735_lfkbl7.png",
       alt: "Citizen Issue Reporting & Tracking Dashboard",
     },
     {
       id: "admin",
       label: "Admin Dashboard",
-      img: adminDashboardImg,
+      img: "https://res.cloudinary.com/dkekgrdud/image/upload/v1783856300/Screenshot_2026-07-08_192819_ueyavc.png",
       alt: "Admin Resolution & SLA Monitoring Dashboard",
     },
     {
       id: "staff",
       label: "Staff Portal",
-      img: staffDashboardImg,
+      img: "https://res.cloudinary.com/dkekgrdud/image/upload/v1783856301/Screenshot_2026-07-08_193100_opojqt.png",
       alt: "Field Staff Resolution Portal",
     },
   ];
