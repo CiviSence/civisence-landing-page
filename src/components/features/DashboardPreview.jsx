@@ -123,7 +123,7 @@ const DashboardPreview = () => {
           </div>
 
           {/* Actual Image Render */}
-          <div className="bg-gray-950 rounded-b-2xl overflow-hidden shadow-2xl relative border-b border-x border-gray-700/80 aspect-video w-full min-h-[260px] sm:min-h-[420px] lg:min-h-[540px]">
+          <div className="bg-gray-950 rounded-b-2xl overflow-hidden shadow-2xl relative border-b border-x border-gray-700/80 aspect-video w-full min-h-[200px] sm:min-h-[420px] lg:min-h-[540px]">
             {/* Loading Skeleton & Spinner when image is not yet loaded */}
             {!loadedImages[activeTab] && (
               <div className="absolute inset-0 flex flex-col items-center justify-center bg-gray-900/90 gap-3 z-10 animate-pulse">
